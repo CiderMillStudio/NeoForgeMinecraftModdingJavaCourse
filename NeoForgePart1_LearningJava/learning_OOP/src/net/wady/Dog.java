@@ -4,8 +4,9 @@ public class Dog {
     // Members
     // Fields
     public String picture;
-    public String dogName;
-    public int age;
+    protected String dogName;
+    private int age;
+    public static int numberOfDogs = 0;
 
     // Constructors --> "Method" used to create a new instance of a class
     // This is the default constructor:
@@ -19,6 +20,7 @@ public class Dog {
         this.picture = _picture;
         this.dogName = _name;
         this.age = _age;
+        numberOfDogs++;
     }
 
     public void birthday() {
@@ -27,6 +29,14 @@ public class Dog {
 
     public void bark() {
         System.out.println(dogName + " barked!");
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int _newAge) {
+        age = _newAge;
     }
 
 }
