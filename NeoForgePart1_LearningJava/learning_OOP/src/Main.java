@@ -1,6 +1,5 @@
-import net.wady.Animal;
-import net.wady.Cat;
-import net.wady.Dog;
+import com.sun.source.tree.CaseTree;
+import net.wady.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,12 +11,21 @@ public class Main {
         Dog jeremy = new Dog("jeremy.jpg", "Jeremy", 7);
         // System.out.println("Now, there are " + Dog.numberOfDogs + " dogs.");
         Dog casper = new Dog("casper.png", "casper", 4);
+        Cat syoma = new Cat("syoma.png", "Syoma", 6);
+        Bear newton = new Bear("newton.jpeg", "Newton", 8);
+        Bird birdy = new Bird("birdy.jpeg", "Birdy", 4);
+
+
+        System.out.println("\nWELCOME TO PETTING ZOO!");
+
+        PettingZoo pettingZoo = new PettingZoo(syoma, casper, bengie, jeremy);
+        pettingZoo.petRandomAnimal();
+        pettingZoo.petRandomAnimal();
+        pettingZoo.petRandomAnimal();
 
         bengie.birthday();
         bengie.makeSound();
         bengie.displayInfo();
-
-        Cat syoma = new Cat("syoma.png", "Syoma", 6);
 
         syoma.birthday();
         syoma.makeSound();
@@ -33,6 +41,18 @@ public class Main {
         // you need to cast it in order to make it do subclass-exclusive methods
         // myCuteAnimal.bellyrub() doesn't work.. you've got to cast as Dog
         ((Dog) myCuteAnimal).bellyrub();
+
+
+
+        syoma.pet();
+        casper.pet();
+        casper.walk();
+        newton.makeSound();
+        birdy.makeSound();
+        birdy.move();
+
+
+
 
 
 /*        System.out.println("Bengie age: " + bengie.getAge());

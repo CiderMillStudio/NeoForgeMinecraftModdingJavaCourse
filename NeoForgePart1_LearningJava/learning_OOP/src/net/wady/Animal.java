@@ -1,10 +1,13 @@
 package net.wady;
 
-public class Animal {
+public abstract class Animal { // An ABSTRACT CLASS CANNOT BE INSTANTIATED, instead, it's subclass must be instantiated.
 
     protected String picture;
     private String name;
     private int age;
+
+    public abstract void makeSound(); // by making a METHOD ABSTRACT, you force subclasses to implement it.
+    public abstract void move();
 
     public Animal(String _picture, String _name, int _age) {
         this.picture = _picture;
@@ -16,9 +19,7 @@ public class Animal {
         age++;
     }
 
-    public void makeSound() {
-        System.out.println(name + " made a sound!");
-    }
+
 
     public int getAge() {
         return age;
