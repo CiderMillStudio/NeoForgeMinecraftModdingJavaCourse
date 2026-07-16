@@ -1,10 +1,8 @@
 package net.wady.minergame;
 
-public class Stone extends Block {
+public class Dirt extends Block{
 
-    private String blockType = "stone";
-
-
+    private String blockType = "dirt";
 
     @Override
     public String getBlockType() {
@@ -20,4 +18,5 @@ public class Stone extends Block {
     protected void introduceBlock() {
         super.introduceBlock();
     }
+
 }

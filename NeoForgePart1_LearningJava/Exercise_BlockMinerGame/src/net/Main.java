@@ -41,5 +41,14 @@ package net;
  *
  */
 
+import net.wady.minergame.BlockMinerGame;
+
 public class Main {
+
+    public static void main(String[] args) {
+        BlockMinerGame game = new BlockMinerGame();
+        game.startGameLoop();
+
+
+    }
 }

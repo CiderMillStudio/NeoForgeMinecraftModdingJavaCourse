@@ -13,10 +13,11 @@ public abstract class Tool {
         remainingDurability = baseDurability;
     }
 
-    public void useTool(Block block) {
+    public void useTool(Block block, PlayerInventory inventory) {
         if (this.isUsable) {
             if (block.getBlockType().equalsIgnoreCase(this.blockType)) { // if this is the correct block type for this tool:
                 degradeTool(1);
+                block.harvestBlock(inventory);
             }
             else { // if this is the INCORRECT block type for this tool:
                 degradeTool(10);
@@ -34,7 +35,7 @@ public abstract class Tool {
     }
 
     public void degradeTool(int degradeAmount) {
-        if (this.remainingDurability >= degradeAmount) {
+        if (this.remainingDurability - 1 >= degradeAmount) {
             this.remainingDurability -= degradeAmount;
         }
         else {
