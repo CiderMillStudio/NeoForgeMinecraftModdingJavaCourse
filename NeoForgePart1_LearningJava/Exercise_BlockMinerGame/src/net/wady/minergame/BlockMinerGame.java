@@ -139,6 +139,9 @@ public class BlockMinerGame {
             case "q", "quit":
                 quit = true;
                 break;
+            default:
+                throw new IllegalStateException("Unexpected Value: " + choice);
+
 
         }
 
